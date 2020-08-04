@@ -44,7 +44,7 @@ const siteContent = {
 // CREATE SELECTORS //
 
 const container = document.querySelector('.container')
-const nav = document.querySelector('nav')
+const nav = document.querySelector('header nav')
 const navItemOne = nav.querySelector('a')
 const navItemTwo = navItemOne.nextElementSibling
 const navItemThree = navItemTwo.nextElementSibling
@@ -57,17 +57,28 @@ const ctaText = document.querySelector('.cta-text h1')
 const ctaButton = cta.querySelector('button')
 const ctaImg = cta.querySelector('img')
 const mainContent = document.querySelector('.main-content')
-const topContent = document.querySelectorAll('.top-content')
-const features = topContent[0]
-const featuresHeading = features.querySelector('.text-content h4')
-const featuresContent = features.querySelector('.text-content p')
-// const about = topContent[1]
-// const aboutHeading = about.querySelector('.text-content h4')
-// const aboutContent = about.querySelector('.text-content p')
+const topContent = document.querySelector('.top-content')
+const features = document.querySelector('.text-content:nth-of-type(1)')
+const featuresHeading = features.querySelector('h4')
+const featuresContent = features.querySelector('p')
+const about = document.querySelector('.text-content:nth-of-type(2)')
+const aboutHeading = about.querySelector('h4')
+const aboutContent = about.querySelector('p')
 const middleImg = mainContent.querySelector('img')
-const contact = document.querySelectorAll('.contact')
-const contactHeading = contact.querySelector('h4')
-const address = contact[1]
+const bottomContent = document.querySelector('.bottom-content')
+const services = document.querySelector('.bottom-content .text-content:nth-of-type(1)')
+const servicesHeading = services.querySelector('h4')
+const servicesContent = services.querySelector('p')
+const product = document.querySelector('.bottom-content .text-content:nth-of-type(2)')
+const productHeading = product.querySelector('h4')
+const productContent  = product.querySelector('p')
+const vision = document.querySelector('.bottom-content .text-content:nth-of-type(3)')
+const visionHeading = vision.querySelector('h4')
+const visionContent = vision.querySelector('p')
+const contactHeading = document.querySelector('.contact h4')
+const address = document.querySelector('.contact p')
+const phone = document.querySelector('.contact p:nth-of-type(2)')
+const email = document.querySelector('.contact p:nth-of-type(3)')
 const footer = document.querySelector('footer')
 
 // UPDATE THE HTML //
@@ -86,9 +97,39 @@ ctaImg.src = 'img/header-img.png'
 
 featuresHeading.textContent = siteContent["main-content"]["features-h4"]
 featuresContent.textContent = siteContent['main-content']['features-content']
-// aboutHeading.textContent = siteContent['main-content']['about-h4']
-// aboutContent.textContent = siteContent['main-content']['about-content']
+aboutHeading.textContent = siteContent['main-content']['about-h4']
+aboutContent.textContent = siteContent['main-content']['about-content']
 middleImg.src = 'img/mid-page-accent.jpg'
+servicesHeading.textContent = siteContent["main-content"]["services-h4"]
+servicesContent.textContent = siteContent["main-content"]["services-content"]
+productHeading.textContent = siteContent["main-content"]["product-h4"]
+productContent.textContent  = siteContent["main-content"]["product-content"]
+visionHeading.textContent = siteContent["main-content"]["vision-h4"]
+visionContent.textContent = siteContent["main-content"]["vision-content"]
 
 contactHeading.textContent = siteContent['contact']['contact-h4']
 address.textContent = siteContent['contact']['address']
+phone.textContent = siteContent['contact']['phone'] 
+email.textContent = siteContent['contact']['email'] 
+
+
+
+navItemOne.style.color = 'green'
+navItemTwo.style.color = 'green'
+navItemThree.style.color = 'green'
+navItemFour.style.color = 'green'
+navItemFive.style.color = 'green'
+navItemSix.style.color = 'green'
+
+const newLink1 = document.createElement('a')
+newLink1.textContent = 'FAQ'
+newLink1.href = '#'
+nav.appendChild(newLink1)
+const newLink2 = document.createElement('a')
+newLink2.textContent = 'Support'
+newLink2.href = '#'
+nav.prepend(newLink2)
+
+newLink1.style.color = 'green'
+newLink2.style.color = 'green'
+
